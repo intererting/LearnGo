@@ -7,14 +7,20 @@ import "fmt"
 */
 func main() {
 	//只有a为int类型才能转换成功
-	var a interface{}
+	//var a interface{}
 	//b, ok := a.(int)
 	//fmt.Println(b, " ", ok)
+
+	//type assertion,相当于as
+	var b typeInterface
+	b = typeStruct{}
+	c := b.(typeStruct)
+	c.content()
 }
 
 /**
 .(type)只能在switch中使用**
- */
+*/
 func do(i interface{}) {
 	switch v := i.(type) {
 	case int:
@@ -24,4 +30,22 @@ func do(i interface{}) {
 	default:
 		fmt.Printf("I don't know about type %T!\n", v)
 	}
+}
+
+type typeInterface interface {
+	content() string
+}
+
+type typeStruct struct {
+}
+
+func (t typeStruct) content() string {
+	return "TypeStruct"
+}
+
+type typeStructTwo struct {
+}
+
+func (t typeStructTwo) content() string {
+	return "TypeStructTwo"
 }

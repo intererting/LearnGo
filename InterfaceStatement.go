@@ -21,6 +21,7 @@ type myInterfaceImpl struct {
 }
 
 //接口的隐式实现，方法名签名和接口相同，那么myInterfaceImpl就隐式实现了MyInterface
+//duck type 接口的实际类型不用声明，只需要具备某些行为就认为是某个类型
 func (m myInterfaceImpl) test() string {
 	return m.name
 }
@@ -34,7 +35,7 @@ func test1(m MyInterface) MyInterface {
 
 /**
 interface{}可以代表任何值，在java就是Object，在kotlin就是Any
- */
+*/
 func testAny(a interface{}) {
 	fmt.Println("interface{}")
 }
