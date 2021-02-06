@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //函数和指针
 func main() {
 	myPoint := myPoint{
@@ -9,10 +7,10 @@ func main() {
 		y: 0,
 	}
 	//扩展需要值类型的地方传指针没用,但是需要指针时可以直接用变量
-	//myPointP := &myPoint
-	//myPointP.test1()
+	myPointP := &myPoint
+	myPointP.test1()
 	//test3(&myPoint)
-	fmt.Println(myPoint)
+	//fmt.Println(myPoint)
 }
 
 type myPoint struct {

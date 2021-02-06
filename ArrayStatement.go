@@ -36,9 +36,33 @@ func main() {
 	//fmt.Println(a)
 
 	//range循环
-	a := []int{'a', 'b'}
-	for index, value := range a {
-		fmt.Println(index)
-		fmt.Printf("%q \n", value)
-	}
+	//注意点，range遍历获得的value是数据的副本，不是源数据的引用(指针，map，chan除外，这些是引用)
+	//a := []int{'a', 'b'}
+	//for index, value := range a {
+	//	fmt.Println(index)
+	//	fmt.Printf("%q \n", value)
+	//}
+
+	//a := 1
+	//b := 2
+	//c := []*int{&a, &b}
+	//for _, value := range c {
+	//	*value = 100
+	//}
+	//for _, value := range c {
+	//	fmt.Println(*value)
+	//}
+
+	//相同长度，相同类型的数组可以直接赋值
+	//var a [3]int
+	//b := [3]int{1, 2, 3}
+	//a = b
+	//fmt.Print(a)
+
+	a := []int{1, 2, 3, 4, 5, 6}
+	//第一个数表示切片开始位置
+	//第二个数表示len结束位置
+	//第三个数表示cap结束位置
+	b := a[1:3:5]
+	fmt.Println(len(b), cap(b))
 }

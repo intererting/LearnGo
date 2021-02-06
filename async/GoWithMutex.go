@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+//runtime.Gosched() //相当于java的yield
+
 // SafeCounter 的并发使用是安全的。
 type SafeCounter struct {
 	v   map[string]int

@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
+	"log"
 	"runtime"
 )
 
@@ -35,18 +37,26 @@ func main() {
 
 /**
 a 2
+2021/02/05 09:44:36 before a 2
+2021/02/05 09:44:36 after a 3
 defer 1
 before
-3
+2021/02/05 09:44:36 result   2
+
 */
 func deferStatement() (i int) {
 	a := 1
 	//defer是一个栈，FILO
 	defer fmt.Println("before")
-	//defer会先计算，但是会后执行，所以这里的a是1不是2
-	defer fmt.Println("defer", a);
+	//普通表达式defer会先计算，但是会后执行，所以这里的a是1不是2
+	defer fmt.Println("defer", a)
 	//defer可以修改返回值，所以这里的结果为3
-	defer func() { i++ }()
+	defer func() {
+		//闭包会持有引用,但是不能修改返回值
+		log.Printf("before a %d", a)
+		a++
+		log.Printf("after a %d", a)
+	}()
 	a++
 	fmt.Println("a", a)
 	return a
@@ -94,6 +104,18 @@ func whileLoopWithFor() {
 	for {
 		fmt.Println("xx")
 	}
+}
+
+//FPrintf的使用
+func testFPrintf() {
+	var a bytes.Buffer
+
+	len, err := fmt.Fprintf(&a, "%d  %s", 1, "haha")
+	if err != nil {
+		return
+	}
+	fmt.Println(len)
+	fmt.Println(a.String())
 }
 
 /**
