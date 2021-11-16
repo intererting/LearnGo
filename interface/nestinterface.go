@@ -2,8 +2,9 @@ package main
 
 import "fmt"
 
-func main() {
+func nestedInterface() {
 
+	//MyStruce实现了inner和outer所以具有多态
 	var inter OuterInterface = MyStruce{}
 	inter.inner()
 	inter.outer()
@@ -21,7 +22,7 @@ func (myStruce MyStruce) inner() {
 }
 
 type OuterInterface interface {
-	//接口嵌套
+	//接口嵌套，可以当成组合（优于继承）
 	InnerInterface
 	outer()
 }

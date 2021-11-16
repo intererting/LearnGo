@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func toString() {
 	a := toStringStruct{"yuliyang"}
 	//调用toString方法
 	fmt.Println(a)

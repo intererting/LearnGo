@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func testChannel() {
 
 	//a := []int{1, 2, 3, 4}
 	////2代表缓冲区大小
@@ -14,17 +14,27 @@ func main() {
 	//fmt.Println(left, right)
 
 	//测试斐波那契数列
+
 	channel := make(chan int, 10)
 	fibonacci(cap(channel), channel)
-	for value := range channel {
-		fmt.Println(value)
+	//for value := range channel {
+	//	fmt.Println(value)
+	//}
+
+	for {
+		value, ok := <-channel
+		if ok {
+			fmt.Println(value)
+		} else {
+			break
+		}
 	}
 }
 
 /**
 声明一个int类型的通道
 */
-func channelTest(a []int, b chan int) {
+func channelTest(a []int, b chan<- int) {
 	var sum = 0
 	for _, value := range a {
 		sum += value

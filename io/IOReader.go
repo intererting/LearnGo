@@ -7,17 +7,17 @@ import (
 	"strings"
 )
 
-func main() {
+func ioReader() {
 	//基本的IO操作
 	a := "hello golang"
 	reader := strings.NewReader(a)
 	b := make([]byte, 8)
 	for {
 		hasRead, err := reader.Read(b)
-		fmt.Printf("%s", b[:hasRead])
 		if err == io.EOF {
 			break
 		}
+		fmt.Printf("%s", b[:hasRead])
 	}
 }
 

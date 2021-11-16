@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func learnMap() {
 	//直接初始化
 	a := map[string]string{"name": "haha"}
 	//调用make初始化，如果没有调用make，那么默认为nil

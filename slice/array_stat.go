@@ -1,16 +1,15 @@
 package main
 
-import "fmt"
-
-func main() {
+func learnArray() {
 
 	////数组初始化
-	//a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	//a := [12]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	////数组切片，前闭后开
+	////切片后不再是数组
 	//b := a[0:2]
-	////切片赋值会影响原数组
+	//fmt.Printf("%v\n", reflect.TypeOf(b))
+	//////切片赋值会影响原数组
 	//b[0] = 11
-	////fmt.Printf("%v", a[0:2])
 	//fmt.Println(a[:])
 
 	//cap在切换中表示下次切片能切的右值
@@ -59,10 +58,10 @@ func main() {
 	//a = b
 	//fmt.Print(a)
 
-	a := []int{1, 2, 3, 4, 5, 6}
+	//a := []int{1, 2, 3, 4, 5, 6}
 	//第一个数表示切片开始位置
 	//第二个数表示len结束位置
 	//第三个数表示cap结束位置
-	b := a[1:3:5]
-	fmt.Println(len(b), cap(b))
+	//b := a[1:3:5]
+	//fmt.Println(len(b), cap(b))
 }

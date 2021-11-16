@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /**
 自定义Error
 系统自带error接口
@@ -9,9 +7,9 @@ type error interface {
     Error() string
 }
 */
-func main() {
+func testCstmError() error {
 	a := myError{}
-	fmt.Println(a)
+	return a
 }
 
 type myError struct {

@@ -2,11 +2,13 @@ package main
 
 import (
 	"bytes"
+	"fmt"
+	"io"
 	"log"
 	"os"
 )
 
-func main() {
+func testByteBuffer() {
 	file, fileErr := os.Open("test.txt")
 	if fileErr != nil {
 		return
@@ -19,14 +21,17 @@ func main() {
 	var byteBuffer bytes.Buffer
 
 	hasRead, err = file.Read(data)
+	if err != nil {
+		log.Fatal("error")
+	}
 	for hasRead > 0 {
 		//有数据的
 		byteBuffer.Write(data[:hasRead])
-		//捕获到了一个异常
-		if err != nil {
-			break
-		}
 		hasRead, err = file.Read(data)
+		//捕获到了一个异常
+		if err != nil && err != io.EOF {
+			log.Fatal("error")
+		}
 	}
-	log.Println(byteBuffer.String())
+	fmt.Println(byteBuffer.String())
 }

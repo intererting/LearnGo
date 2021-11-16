@@ -1,6 +1,6 @@
 package main
 
-func main() {
+func testPointer() {
 	////指针声明
 	//var a *int
 	//var b = 3

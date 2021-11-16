@@ -5,7 +5,7 @@ import "fmt"
 /**
 安全的类型转换 as?
 */
-func main() {
+func testTypeCast() {
 	//只有a为int类型才能转换成功
 	//var a interface{}
 	//b, ok := a.(int)
@@ -15,6 +15,8 @@ func main() {
 	var b typeInterface
 	b = typeStruct{}
 	c := b.(typeStruct)
+	//接口类型转换
+	//d := typeInterface(b)
 	c.content()
 }
 

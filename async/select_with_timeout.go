@@ -6,9 +6,8 @@ import (
 	"time"
 )
 
-var wg sync.WaitGroup
-
-func main() {
+func testSelectWithTimeout() {
+	var wg sync.WaitGroup
 	timeOut := time.After(5 * time.Second)
 	a := make(chan int)
 	stop := make(chan int)

@@ -8,12 +8,12 @@ import (
 )
 
 /**
-1.var用于声明变量,类型在最后,可以省略
+1.var用于声明变量,类型在最后,可以省略,var通常用来声明带默认初始值的属性
 2.:=替代var可以用来快捷赋值,:=可以通过右值的类型自动推断左值的类型，但是只能用于函数内
 3.基本类型bool string int uint float32 float64 byte
 4.const声明一个常量
 */
-func main() {
+func testBasic() {
 	//var a, b int = 3, 4
 	//c := 4
 	//fmt.Print(c)
@@ -32,7 +32,7 @@ func main() {
 
 	//switchStatement()
 
-	fmt.Println(deferStatement())
+	//fmt.Println("result", deferStatement())
 }
 
 /**
@@ -50,7 +50,7 @@ func deferStatement() (i int) {
 	defer fmt.Println("before")
 	//普通表达式defer会先计算，但是会后执行，所以这里的a是1不是2
 	defer fmt.Println("defer", a)
-	//defer可以修改返回值，所以这里的结果为3
+	//defer不能修改返回值
 	defer func() {
 		//闭包会持有引用,但是不能修改返回值
 		log.Printf("before a %d", a)
@@ -131,7 +131,7 @@ func forLoops() {
 没有类型的自动转化
 */
 func convert(x float32) float64 {
-	return float64((x))
+	return float64(x)
 }
 
 /**

@@ -5,7 +5,7 @@ import (
 )
 
 //扩展方法
-func main() {
+func structFun() {
 	//person := Person{"yuliyang"}
 	//fmt.Println(person.test(3))
 

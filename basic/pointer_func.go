@@ -1,21 +1,29 @@
 package main
 
+import "fmt"
+
 //函数和指针
-func main() {
+func learnPointerFunc() {
 	myPoint := myPoint{
 		x: 0,
 		y: 0,
 	}
-	//扩展需要值类型的地方传指针没用,但是需要指针时可以直接用变量
-	myPointP := &myPoint
-	myPointP.test1()
-	//test3(&myPoint)
+	//扩展需要值类型的地方传指针没用,但是需要指针时可以直接用变量,go会自动去除指针或者加地址
+	//myPointP := &myPoint
+	//myPointP.test1()
+	myPoint.testChange()
+	fmt.Printf("%+v", myPoint)
 	//fmt.Println(myPoint)
 }
 
 type myPoint struct {
 	x float64
 	y float64
+}
+
+func (myPoint *myPoint) testChange() {
+	myPoint.x = 100
+	myPoint.y = 100
 }
 
 //如果这里不带指针，那么不能修改值

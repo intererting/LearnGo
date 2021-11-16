@@ -1,6 +1,6 @@
 package main
 
-func main() {
+func testQueue() {
 	//queue := Queue{}
 	//queue.Push(1)
 	//queue.Push(2)

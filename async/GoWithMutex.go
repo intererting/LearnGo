@@ -19,7 +19,7 @@ func (c *SafeCounter) Inc(key string) {
 	c.mux.Lock()
 	// Lock 之后同一时刻只有一个 goroutine 能访问 c.v
 	c.v[key]++
-	c.mux.Unlock()
+	defer c.mux.Unlock()
 }
 
 // Value 返回给定 key 的计数器的当前值。
@@ -30,7 +30,7 @@ func (c *SafeCounter) Value(key string) int {
 	return c.v[key]
 }
 
-func main() {
+func testMutex() {
 	c := SafeCounter{v: make(map[string]int)}
 	for i := 0; i < 1000; i++ {
 		go c.Inc("somekey")

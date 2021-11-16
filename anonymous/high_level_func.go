@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //高阶函数
-func main() {
+func testHighLevelFunc() {
 	//函数引用
 	//fmt.Println(complexFunc(math.Min))
 	fmt.Println(complexFunc(minus))

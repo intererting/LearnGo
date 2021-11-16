@@ -10,11 +10,13 @@ import (
 pool是协程安全的
 pool只能被取一次，后面的会是nil
 */
-func main() {
+func testPool() {
+	var wg sync.WaitGroup
 	var pool sync.Pool
 	wg.Add(1)
 	pool.Put("haha")
 	pool.Put("next")
+
 	go func() {
 		fmt.Println(pool.Get())
 		fmt.Println(pool.Get())
@@ -28,6 +30,8 @@ func main() {
 
 	go func() {
 		_, ok := <-time.After(time.Second * 2)
+		//当有结果是为true
+		fmt.Println(ok)
 		if ok {
 			wg.Done()
 		}

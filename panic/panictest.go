@@ -7,7 +7,7 @@ defer中也可以抛出panic
 panic内部recover优先级高
 内部捕获以后,不会影响外函数运行
 */
-func main() {
+func testPanic() {
 
 	defer func() {
 		if r := recover(); r != nil {

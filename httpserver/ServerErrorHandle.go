@@ -18,8 +18,7 @@ func errorHandler(appHandler appHandler) func(writer http.ResponseWriter, reques
 	}
 }
 
-func HandlerFileRequest(writer http.ResponseWriter,
-	request *http.Request) error {
+func HandlerFileRequest(writer http.ResponseWriter, request *http.Request) error {
 	path := request.URL.Path[len("/test/"):]
 	file, err := os.Open(path)
 	if err != nil {
