@@ -21,9 +21,6 @@ func testByteBuffer() {
 	var byteBuffer bytes.Buffer
 
 	hasRead, err = file.Read(data)
-	if err != nil {
-		log.Fatal("error")
-	}
 	for hasRead > 0 {
 		//有数据的
 		byteBuffer.Write(data[:hasRead])
