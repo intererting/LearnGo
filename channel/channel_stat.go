@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func testChannel() {
 
@@ -13,22 +16,33 @@ func testChannel() {
 	//left, right := <-channel, <-channel
 	//fmt.Println(left, right)
 
-	//测试斐波那契数列
-
-	channel := make(chan int, 10)
-	fibonacci(cap(channel), channel)
+	////测试斐波那契数列
+	//channel := make(chan int, 10)
+	//fibonacci(cap(channel), channel)
 	//for value := range channel {
 	//	fmt.Println(value)
 	//}
 
-	for {
-		value, ok := <-channel
-		if ok {
-			fmt.Println(value)
-		} else {
-			break
-		}
-	}
+	//for {
+	//	value, ok := <-channel
+	//	if ok {
+	//		fmt.Println(value)
+	//	} else {
+	//		break
+	//	}
+	//}
+
+	a := make(chan int, 2)
+	go func() {
+		a <- 1
+		fmt.Println("1")
+		a <- 2
+		fmt.Println("2")
+		//因为缓存为2，这里会阻塞
+		a <- 3
+		fmt.Println("3")
+	}()
+	time.Sleep(time.Second * 5)
 }
 
 /**
@@ -45,7 +59,7 @@ func channelTest(a []int, b chan<- int) {
 /**
 通道实现斐波那契数列
 */
-func fibonacci(n int, c chan int) {
+func fibonacci(n int, c chan<- int) {
 	x, y := 0, 1
 	for i := 0; i < n; i++ {
 		//写入通道

@@ -10,7 +10,10 @@ func learnArray() {
 	//fmt.Printf("%v\n", reflect.TypeOf(b))
 	//////切片赋值会影响原数组
 	//b[0] = 11
-	//fmt.Println(a[:])
+	//fmt.Println(a)
+	//c := a[:]
+	//c[0] = 100
+	//fmt.Println(a)
 
 	//cap在切换中表示下次切片能切的右值
 	//a := make([]int, 0, 5)
@@ -18,16 +21,10 @@ func learnArray() {
 	//b := a[1:2]
 	//fmt.Println(b)
 	//fmt.Println(len(b), cap(b))
-	////这里只能切到4
+	////这里只能切到4,切片引用的原数组
 	//c := b[0:4]
 	//fmt.Println(c)
 	//fmt.Println(len(c), cap(c))
-
-	//a := make([]int, 5)
-	//b := a[0:2]
-	//b[1] = 3
-	//fmt.Println(b)
-	//fmt.Println(a)
 
 	//append追加
 	//var a []int
@@ -39,9 +36,11 @@ func learnArray() {
 	//a := []int{'a', 'b'}
 	//for index, value := range a {
 	//	fmt.Println(index)
+	//	//字符串可以用%q打印
 	//	fmt.Printf("%q \n", value)
 	//}
 
+	//指针切片
 	//a := 1
 	//b := 2
 	//c := []*int{&a, &b}
@@ -52,11 +51,13 @@ func learnArray() {
 	//	fmt.Println(*value)
 	//}
 
-	//相同长度，相同类型的数组可以直接赋值
+	//相同长度，相同类型的数组可以直接赋值,这种赋值是拷贝
 	//var a [3]int
 	//b := [3]int{1, 2, 3}
 	//a = b
-	//fmt.Print(a)
+	//a[0] = 100
+	//fmt.Println(a)
+	//fmt.Println(b)
 
 	//a := []int{1, 2, 3, 4, 5, 6}
 	//第一个数表示切片开始位置

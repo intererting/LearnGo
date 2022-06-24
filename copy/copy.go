@@ -9,7 +9,7 @@ func main() {
 	//copy(b, a)
 	//fmt.Printf("%v", b)
 
-	//copy是浅拷贝
+	//copy是浅拷贝,里面的类型也是引用
 	a := map[string]string{
 		"name": "yuliyang",
 	}

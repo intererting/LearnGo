@@ -1,11 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 //高阶函数
 func testHighLevelFunc() {
 	//函数引用
-	//fmt.Println(complexFunc(math.Min))
+	fmt.Println(complexFunc(math.Min))
 	fmt.Println(complexFunc(minus))
 }
 

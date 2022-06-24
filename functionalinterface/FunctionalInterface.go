@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //函数式编程
 func main() {
 	//函数式编程标准写法
@@ -13,10 +11,10 @@ func main() {
 	//fmt.Println(result)
 
 	//闭包写法
-	addr := getAddrClosure(3)
-	for i := 0; i < 5; i++ {
-		fmt.Println(addr(i))
-	}
+	//addr := getAddrClosure(3)
+	//for i := 0; i < 5; i++ {
+	//	fmt.Println(addr(i))
+	//}
 }
 
 func getAddrClosure(base int) func(int) int {

@@ -2,5 +2,7 @@ package main
 
 func main() {
 	//testInterface()
-	nestedInterface()
+	//nestedInterface()
+
+	testMuiltInterface()
 }

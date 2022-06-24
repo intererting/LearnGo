@@ -1,6 +1,8 @@
 package main
 
 func main() {
-	learnArray()
+	//learnArray()
 	//testArrayRange()
+	testSlice()
+
 }

@@ -5,11 +5,12 @@ import (
 	"fmt"
 )
 
-var myKey int
+var myKey string
 
 func contextWithValue() {
 	ctx := context.WithValue(context.Background(), &myKey, "yuliyang")
 
-	ctxInner, _ := context.WithCancel(ctx)
+	ctxInner, cancelF := context.WithCancel(ctx)
+	defer cancelF()
 	fmt.Println(ctxInner.Value(&myKey))
 }

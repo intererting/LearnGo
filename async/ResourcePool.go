@@ -10,8 +10,7 @@ import (
 )
 
 // Pool管理一组可以安全地在多个goroutine间
-// 共享的资源。被管理的资源必须
-// 实现io.Closer接口
+// 共享的资源。被管理的资源必须实现io.Closer接口
 type Pool struct {
 	m         sync.Mutex
 	resources chan io.Closer

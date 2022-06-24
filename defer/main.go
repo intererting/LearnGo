@@ -8,6 +8,7 @@ import (
 func main() {
 	//result := deferStatement()
 	//fmt.Println(result)
+
 	result := deferChanData()
 	for key, value := range result {
 		fmt.Println(key, value)
@@ -30,6 +31,7 @@ func deferStatement() (i int) {
 	defer fmt.Println("defer", a)
 	//defer不能修改返回值
 	defer func() {
+		//闭包不会提前计算
 		//闭包会持有引用,但是不能修改返回值
 		log.Printf("before a %d", a)
 		a++
@@ -45,10 +47,10 @@ func deferChanData() map[string]string {
 		"name": "yuliyang",
 	}
 	defer func() {
-		//a["name"] = "changed"
-		a = map[string]string{
-			"age": "22",
-		}
+		a["name"] = "changed"
+		//a = map[string]string{
+		//	"age": "22",
+		//}
 	}()
 	return a
 }

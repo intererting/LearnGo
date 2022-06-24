@@ -14,6 +14,7 @@ import (
 */
 func testBasic() {
 	//var a, b int = 3, 4
+	//a, b := 3, 4
 	//c := 4
 	//fmt.Print(c)
 
@@ -30,8 +31,6 @@ func testBasic() {
 	//ifStatement()
 
 	//switchStatement()
-
-	//fmt.Println("result", deferStatement())
 }
 
 /**
@@ -53,7 +52,7 @@ func switchStatement() {
 }
 
 /**
-if可以不用(),而且if表达式前可以见简单的语句，语句的作用域在if以内,语句之间用；分割
+if可以不用(),而且if表达式前可以用简单的语句，语句的作用域在if以内,语句之间用；分割
 */
 func ifStatement() {
 	a := 1

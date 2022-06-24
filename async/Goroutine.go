@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
-var a = 0
+var a int32 = 0
 var wg sync.WaitGroup
 
 func testCoroutine() {
@@ -21,7 +22,7 @@ func myGoroutine() {
 
 	//多线程访问，可以用atomic修改
 	for i := 0; i < 100000; i++ {
-		a++
+		atomic.AddInt32(&a, 1)
 		//time.Sleep(100 * time.Millisecond)
 	}
 	defer wg.Done()

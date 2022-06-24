@@ -6,11 +6,11 @@ import (
 
 //扩展方法
 func structFun() {
-	//person := Person{"yuliyang"}
-	//fmt.Println(person.test(3))
+	person := Person{"yuliyang"}
+	fmt.Println(person.test(3))
 
-	//var a MyInt = -3
-	//fmt.Println(a.test2())
+	var a MyInt = -3
+	fmt.Println(a.test2())
 
 	myPoint := MyPoint{
 		x: 0,

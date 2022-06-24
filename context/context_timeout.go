@@ -18,19 +18,18 @@ func contextTimeout() {
 	defer cancel()
 
 	// consumer
-	go func(ctx context.Context) {
-		ticker := time.NewTicker(1 * time.Second)
-		for _ = range ticker.C {
-			select {
-			case <-ctx.Done():
-				fmt.Println("child process interrupt...")
-				return
-			default:
-				fmt.Printf("send message: %d\n", <-messages)
-			}
-		}
-	}(ctx)
-
+	//go func(ctx context.Context) {
+	//	ticker := time.NewTicker(1 * time.Second)
+	//	for _ = range ticker.C {
+	//		select {
+	//		case <-ctx.Done():
+	//			fmt.Println("child process interrupt...")
+	//			return
+	//		default:
+	//			fmt.Printf("send message: %d\n", <-messages)
+	//		}
+	//	}
+	//}(ctx)
 	select {
 	case <-ctx.Done():
 		time.Sleep(1 * time.Second)

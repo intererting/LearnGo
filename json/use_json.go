@@ -19,24 +19,24 @@ func testStructWithJson() {
 	result, err := json.Marshal(s)
 	if err == nil {
 		jsonString := string(result)
-		fmt.Printf("%+v", jsonString)
+		fmt.Println(jsonString)
 	}
 }
 
 func testStringWithJson() {
-	//var jsonData = `{"name":"yuliyang"}`
-	//var a map[string]string
-	//err := json.Unmarshal([]byte(jsonData), &a)
-	//if err != nil {
-	//	return
-	//}
-	//fmt.Println(a["name"])
-
-	a := make(map[string]string)
-	a["name"] = "yuliyang"
-	b, err := json.Marshal(a)
-	if nil != err {
+	var jsonData = `{"name":"yuliyang"}`
+	var a map[string]string
+	err := json.Unmarshal([]byte(jsonData), &a)
+	if err != nil {
 		return
 	}
-	fmt.Println(string(b))
+	fmt.Println(a["name"])
+
+	//a := make(map[string]string)
+	//a["name"] = "yuliyang"
+	//b, err := json.Marshal(a)
+	//if nil != err {
+	//	return
+	//}
+	//fmt.Println(string(b))
 }

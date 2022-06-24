@@ -9,6 +9,7 @@ import (
 /**
 pool是协程安全的
 pool只能被取一次，后面的会是nil
+pool是弱应用，不会阻止回收
 */
 func testPool() {
 	var wg sync.WaitGroup
@@ -23,6 +24,7 @@ func testPool() {
 	}()
 	go func() {
 		fmt.Println(pool.Get())
+		pool.Put("new")
 	}()
 	go func() {
 		fmt.Println(pool.Get())

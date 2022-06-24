@@ -14,7 +14,7 @@ func testTypeCast() {
 	//type assertion,相当于as
 	var b typeInterface
 	b = typeStruct{}
-	c := b.(typeStruct)
+	c := b.(typeInterface)
 	//接口类型转换
 	//d := typeInterface(b)
 	c.content()

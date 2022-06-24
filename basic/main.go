@@ -1,8 +1,17 @@
 package main
 
 func main() {
+	//interfaceCast()
+
 	//testBasic()
+
 	//testFPrintf()
+
 	//learnPointerFunc()
-	testTypeCast()
+
+	//structFun()
+
+	toString()
+
+	//testTypeCast()
 }

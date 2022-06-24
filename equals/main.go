@@ -5,11 +5,16 @@ import "fmt"
 //测试go的==
 func main() {
 	//testSlice()
+
 	//testArray()
+
 	//testPointer()
+
 	//testMap()
-	testChan()
-	//testStruct()
+
+	//testChan()
+
+	testStruct()
 }
 
 //如果struct包含不能比较类型,比如切片,那么就会报错,其他情况只要类型可比较就行
@@ -68,15 +73,17 @@ func testPointer() {
 
 //	2数组 数组大小不一样不能比较  数组只有内容都相同才能比较
 func testArray() {
-	//arrayA := [3]int{1, 2, 3}
-	//arrayB := [3]int{1, 2, 2}
-	//fmt.Println(arrayA == arrayB)
+	arrayA := [3]int{1, 2, 3}
+	arrayB := [3]int{1, 2, 3}
+	fmt.Println(arrayA == arrayB)
 }
 
 //1:切片 slice can only be compared to nil
+//切片不能直接比较,但是可以和nil比较
 func testSlice() {
 	//sliceA := []int{1, 2, 3}
 	//sliceB := []int{1, 2, 3}
-	//error
+	////error
 	//fmt.Println(sliceA == sliceB)
+	//fmt.Println(nil == sliceA)
 }

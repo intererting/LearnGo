@@ -11,7 +11,9 @@ func testSlice() {
 	appendResult := append(a, 1)
 	//发生扩容，生成新的slice，这个时候的cap翻倍
 	//fmt.Println(len(appendResult), cap(appendResult))
-
+	//appendResult和之前的a没有关系了
+	appendResult[0] = 1000
+	fmt.Println(a)
 	//尝试修改sliceA的值
 	sliceA[0] = 100
 	//a的值会被修改

@@ -9,7 +9,8 @@ import (
 )
 
 func testByteBuffer() {
-	file, fileErr := os.Open("test.txt")
+	//默认根目录是项目根目录
+	file, fileErr := os.Open("io/test.txt")
 	if fileErr != nil {
 		return
 	}

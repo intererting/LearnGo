@@ -9,9 +9,9 @@ import "fmt"
 //如果切片的len==cap，那么往切片添加数据的时候，会生成一个新的切片，这个切片和源数据没有关系
 func main() {
 	//testArray()
-	//testChangeSlice()
+	testChangeSlice()
 	//testMap()
-	testChan()
+	//testChan()
 }
 
 func testSlice() {
