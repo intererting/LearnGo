@@ -6,11 +6,6 @@ import (
 	"unsafe"
 )
 
-func main() {
-	testPointer()
-	//testReflect()
-}
-
 func testReflect() {
 	//获取类型
 	mStruct := myStruct{10, "yuliyang"}
