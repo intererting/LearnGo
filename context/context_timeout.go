@@ -33,6 +33,6 @@ func contextTimeout() {
 	select {
 	case <-ctx.Done():
 		time.Sleep(1 * time.Second)
-		fmt.Println("main process exit!")
+		fmt.Println("main.go process exit!")
 	}
 }

@@ -31,5 +31,5 @@ func channelWithDone() {
 	time.Sleep(5 * time.Second)
 	close(done)
 	time.Sleep(1 * time.Second)
-	fmt.Println("main process exit!")
+	fmt.Println("main.go process exit!")
 }
