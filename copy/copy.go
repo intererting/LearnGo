@@ -1,8 +1,44 @@
 package main
 
-import "fmt"
+import (
+	"bytes"
+	"encoding/gob"
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
+	//normalCopy()
+
+	//deepCopy_1()
+
+	//deepCopy_2()
+}
+
+type Book struct {
+}
+
+func deepCopy_2(src []Book) (*[]Book, error) {
+	var dst = new([]Book)
+	b, err := json.Marshal(src)
+	if err != nil {
+		return nil, err
+	}
+	err = json.Unmarshal(b, dst)
+	return dst, err
+}
+
+func deepCopy_1(dst, src interface{}) error {
+	var buf bytes.Buffer
+
+	if err := gob.NewEncoder(&buf).Encode(src); err != nil {
+		return err
+	}
+
+	return gob.NewDecoder(bytes.NewBuffer(buf.Bytes())).Decode(dst)
+}
+
+func normalCopy() {
 	//切片拷贝，dst的结构类型必须与src相同，不然失败
 	//a := []int{1}
 	//b := make([]int, 1)
@@ -19,5 +55,4 @@ func main() {
 	copy(arrCopy, arr)
 	a["name"] = "changed"
 	fmt.Printf("%v", arrCopy)
-
 }
