@@ -14,7 +14,34 @@ func main() {
 
 	//testChan()
 
-	testStruct()
+	//testStruct()
+
+	testNil()
+}
+
+func testNil() {
+	type MyStruct struct {
+	}
+
+	type MyInterface interface {
+	}
+
+	var a []int
+	var b MyStruct
+	var c chan int
+	var d map[string]string
+	var e MyInterface
+	var f *int
+	var g func(int) int
+	//引用类型默认为nil
+	fmt.Println(a == nil)
+	fmt.Println(c == nil)
+	fmt.Println(d == nil)
+	fmt.Println(e == nil)
+	fmt.Println(f == nil)
+	fmt.Println(g == nil)
+	//基本类型会默认初始化
+	fmt.Println(b)
 }
 
 //如果struct包含不能比较类型,比如切片,那么就会报错,其他情况只要类型可比较就行
