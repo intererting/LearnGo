@@ -22,7 +22,7 @@ func (myStruce MyStruce) inner() {
 }
 
 type OuterInterface interface {
-	//接口嵌套，可以当成组合（优于继承）
+	//接口嵌套，可以当成组合
 	InnerInterface
 	outer()
 }

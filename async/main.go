@@ -11,9 +11,11 @@ func main() {
 
 	//testPool()
 
-	//testSelectWithTimeout()
+	testSelectWithTimeout()
 
 	//rwmutexTest1()
 
-	rwmutexTest2()
+	//rwmutexTest2()
+
+	//testRunner()
 }

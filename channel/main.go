@@ -3,5 +3,7 @@ package main
 func main() {
 	//testChannel()
 
-	channelWithDone()
+	//channelWithDone()
+
+	ChannelForeach()
 }

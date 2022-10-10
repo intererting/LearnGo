@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
-	"fmt"
 )
 
 func main() {
@@ -46,13 +45,13 @@ func normalCopy() {
 	//fmt.Printf("%v", b)
 
 	//copy是浅拷贝,里面的类型也是引用
-	a := map[string]string{
-		"name": "yuliyang",
-	}
-	arr := []map[string]string{a}
-
-	arrCopy := make([]map[string]string, 1)
-	copy(arrCopy, arr)
-	a["name"] = "changed"
-	fmt.Printf("%v", arrCopy)
+	//a := map[string]string{
+	//	"name": "yuliyang",
+	//}
+	//arr := []map[string]string{a}
+	//
+	//arrCopy := make([]map[string]string, 1)
+	//copy(arrCopy, arr)
+	//a["name"] = "changed"
+	//fmt.Printf("%v", arrCopy)
 }

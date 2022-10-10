@@ -121,6 +121,7 @@ func createTask() func(int) {
 func testRunner() {
 	// 为本次执行分配超时时间
 	r := NewRunner(timeout)
+	//time.Sleep(time.Second * 4)
 
 	// 加入要执行的任务
 	r.Add(createTask(), createTask(), createTask())

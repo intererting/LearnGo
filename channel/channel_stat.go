@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -32,16 +31,16 @@ func testChannel() {
 	//	}
 	//}
 
-	a := make(chan int, 2)
-	go func() {
-		a <- 1
-		fmt.Println("1")
-		a <- 2
-		fmt.Println("2")
-		//因为缓存为2，这里会阻塞
-		a <- 3
-		fmt.Println("3")
-	}()
+	//a := make(chan int, 2)
+	//go func() {
+	//	a <- 1
+	//	fmt.Println("1")
+	//	a <- 2
+	//	fmt.Println("2")
+	//	//因为缓存为2，这里会阻塞
+	//	a <- 3
+	//	fmt.Println("3")
+	//}()
 	time.Sleep(time.Second * 5)
 }
 

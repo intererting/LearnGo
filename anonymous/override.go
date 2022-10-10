@@ -9,8 +9,9 @@ func testEmbedProperty() {
 			price: 22.2,
 		},
 	}
-	//访问权限提升,不需要使用Book调用
+	//访问权限提升,不需要使用Book调用，但是接受者是Book，这里只能修改Book的price
 	person.test()
+	fmt.Printf("%v\n", person.price)
 	fmt.Printf("%+v", person)
 }
 

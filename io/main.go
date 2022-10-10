@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	testByteBuffer()
+	//testByteBuffer()
+
+	ioReader()
 }

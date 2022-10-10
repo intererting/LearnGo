@@ -15,7 +15,7 @@ func testInterface() {
 	//testAny(a)
 }
 
-//定义接口,这个等价于java8的FunctionalInterface
+//定义接口
 type MyInterface interface {
 	test() string
 }

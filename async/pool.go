@@ -15,6 +15,7 @@ func testPool() {
 	var wg sync.WaitGroup
 	var pool sync.Pool
 	wg.Add(1)
+	//队列 FIFO
 	pool.Put("haha")
 	pool.Put("next")
 

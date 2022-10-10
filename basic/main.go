@@ -11,7 +11,10 @@ func main() {
 
 	//structFun()
 
-	toString()
+	//toString()
 
 	//testTypeCast()
+
+	TestRef()
+
 }
