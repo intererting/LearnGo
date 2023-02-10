@@ -19,13 +19,12 @@ func testCoroutine() {
 }
 
 func myGoroutine() {
-
+	defer wg.Done()
 	//多线程访问，可以用atomic修改
 	for i := 0; i < 100000; i++ {
 		atomic.AddInt32(&a, 1)
 		//time.Sleep(100 * time.Millisecond)
 	}
-	defer wg.Done()
 }
 
 //当主进程结束，协程也被关闭

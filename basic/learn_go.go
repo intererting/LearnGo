@@ -9,20 +9,11 @@ import (
 /**
 1.var用于声明变量,类型在最后,可以省略,var通常用来声明带默认初始值的属性
 2.:=替代var可以用来快捷赋值,:=可以通过右值的类型自动推断左值的类型，但是只能用于函数内
-3.基本类型bool string int uint float32 float64 byte
+3.基本类型bool string int uint float32 float64 byte rune(一个字符)
 4.const声明一个常量
 */
 func testBasic() {
-	//var a, b int = 3, 4
-	//a, b := 3, 4
-	//c := 4
-	//fmt.Print(c)
-
-	//result, status := add(3, 4, "success")
-	//fmt.Print(result, "  ", status)
-
-	//const a = 3
-	//fmt.Print(convert(1.3))
+	//basic()
 
 	//forLoops()
 
@@ -31,6 +22,31 @@ func testBasic() {
 	//ifStatement()
 
 	//switchStatement()
+
+	//testRune()
+}
+
+func testRune() {
+	a := "a中国"
+	//fmt.Println(len([]byte(a)))              //7
+	//fmt.Println(len(bytes.Runes([]byte(a)))) //3
+	for _, r := range bytes.Runes([]byte(a)) {
+		fmt.Println(string(r))
+	}
+}
+
+func basic() {
+	var a, b int = 3, 4
+	//a, b := 3, 4
+	fmt.Println(a, b)
+	c := 4
+	fmt.Print(c)
+
+	result, status := add(3, 4, "success")
+	fmt.Print(result, "  ", status)
+
+	//const a = 3
+	fmt.Print(convert(1.3))
 }
 
 /**
@@ -72,9 +88,13 @@ func whileLoopWithFor() {
 	//}
 
 	//等同于while(true)
-	for {
-		fmt.Println("xx")
-	}
+	//for {
+	//	fmt.Println("xx")
+	//}
+	//i := 10
+	//for i--; i > 0 {
+	//	fmt.Println("%d", i)
+	//}
 }
 
 //FPrintf的使用

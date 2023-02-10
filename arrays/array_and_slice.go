@@ -11,17 +11,36 @@ func main() {
 	//testArray()
 	//testChangeSlice()
 	//testMap()
-	testChan()
+	//testChan()
+	testSlice()
 }
 
 func testSlice() {
 	a := []int{1, 2, 3, 4, 5, 6}
-	b := a[:3:3]
-	//最后一个3声明cap为3，所以c为扩容的新切片，和b没有关系
+	b := a[1:3:4]
+	//最后一个4声明cap为4，表示该切片cap为a[4]，表示可以扩容的上界
+	fmt.Println(len(b))
+	fmt.Println(cap(b))
 	c := append(b, 2)
+	//超过了cap,那么就会生成一个新的切片
+	d := append(c, 3)
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
+	fmt.Println(d)
+}
+
+func testSlice1() {
+	a := []int{1, 2, 3, 4, 5, 6}
+	b := a[1:3]
+	fmt.Println(len(b))
+	fmt.Println(cap(b))
+	c := append(b, 2)
+	d := append(c, 3)
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
 }
 
 //go的引用类型包括切片 map chan 函数 接口

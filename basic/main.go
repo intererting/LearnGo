@@ -3,7 +3,7 @@ package main
 func main() {
 	//interfaceCast()
 
-	//testBasic()
+	testBasic()
 
 	//testFPrintf()
 
@@ -15,6 +15,8 @@ func main() {
 
 	//testTypeCast()
 
-	TestRef()
+	//TestRef()
+
+	//testFunc()
 
 }
