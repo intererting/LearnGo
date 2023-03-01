@@ -53,3 +53,12 @@ func (myPoint *MyPoint) test3() {
 	myPoint.x = 3
 	myPoint.y = 4
 }
+
+func anonymousStruct() {
+	a := struct {
+		name, age string
+	}{
+		"yuliyang", "30",
+	}
+	fmt.Println("%+v", a)
+}
